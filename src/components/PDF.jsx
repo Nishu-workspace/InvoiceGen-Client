@@ -8,25 +8,38 @@ import {
   Font,
 } from "@react-pdf/renderer";
 Font.register({
-  family: "Ubuntu",
+  family: "Noto Sans Devanagari",
   fonts: [
     {
-      src: "http://fonts.gstatic.com/s/ubuntu/v9/2Q-AW1e_taO6pHwMXcXW5w.ttf",
+      src: "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansdevanagari/NotoSansDevanagari-Regular.ttf",
       format: "truetype",
     }, // Regular
     {
-      src: "http://fonts.gstatic.com/s/ubuntu/v9/2Q-AW1e_taO6pHwMXcXW5w.ttf",
+      src: "https://raw.githubusercontent.com/google/fonts/main/ofl/notosansdevanagari/NotoSansDevanagari-Bold.ttf",
       format: "truetype",
       fontWeight: "bold",
     }, // Bold
   ],
 });
-// });
-
+Font.register({
+  family: "Ubuntu",
+  fonts: [
+    {
+      src: "https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKfw72.ttf",
+      format: "truetype",
+    },
+    {
+      src: "https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jsGyN.ttf",
+      format: "truetype",
+      fontWeight: "bold",
+    },
+  ],
+});
 const styles = StyleSheet.create({
   // Page and Layout
   page: {
-    fontFamily: "Ubuntu", // A default safe font
+    // A default safe font
+    fontFamily: "Noto Sans Devanagari",
     fontSize: 11,
     padding: 30,
     lineHeight: 1.5,
