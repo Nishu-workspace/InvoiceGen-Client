@@ -454,6 +454,7 @@ const InvoiceBuilder = () => {
 
       <div className="flex justify-center">
         <PDFDownloadLink
+          className="inline-block px-8 py-3 text-lg font-bold text-white bg-indigo-600 border border-transparent rounded-md shadow-lg hover:bg-indigo-700 transform hover:-translate-y-1 transition-all duration-300 ease-in-out"
           document={
             <PDF
               invoiceData={invoiceData}
