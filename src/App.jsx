@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import AiChatOverlay from "./components/AiChatOverlay";
 import PDF from "./components/PDF";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState(null); // null, 'new-invoice', etc.
