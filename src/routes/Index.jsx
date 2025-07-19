@@ -10,6 +10,7 @@ import AskAi from "../components/AskAi";
 import HomePage from "../components/HomePage";
 import BlogsPage from "../Pages/BlogsPage";
 import SingleBlogPage from "../Pages/SingleBlogPage";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     // The element should ONLY be <App />.
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
 
     // Child routes will be rendered inside the <Outlet /> in App.jsx
     children: [
