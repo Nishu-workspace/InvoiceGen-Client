@@ -1,35 +1,31 @@
-import React, { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import InvoiceBuilder from "./components/InvoiceBuilder";
+import React from "react";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+
+// Import your components
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import AiChatOverlay from "./components/AiChatOverlay";
-import PDF from "./components/PDF";
+import InvoiceBuilder from "./components/InvoiceBuilder";
+import AboutUs from "./components/AbousUs";
 import Footer from "./components/Footer";
 
-const App = () => {
-  const [activeSection, setActiveSection] = useState(null); // null, 'new-invoice', etc.
+// A simple component for your homepage
+const HomePage = () => (
+  <>
+    <Hero />
+    <InvoiceBuilder />
+  </>
+);
 
+function App() {
   return (
-    <div>
-      {/* <PDF /> */}
-      <Header />
-      <Hero />
-      <InvoiceBuilder />
-      <Footer />
-      {/* <AiChatOverlay /> */}
-      {/* <div className='w-1/6'>
-        <Sidebar onSelect={setActiveSection} />
-      </div>
+    // 1. Wrap your entire app in BrowserRouter
 
-      <div className='w-5/6'>
-        {activeSection === 'new-invoice' && <InvoiceBuilder />}
-        {/* You can add more conditions like:
-        {activeSection === 'generate-ai' && <AIInvoiceGenerator />} 
-        */}
-      {/* </div> */}
+    <div className="bg-gray-900">
+      <Header />
+      <Outlet />
+      <Footer />
     </div>
   );
-};
+}
 
 export default App;

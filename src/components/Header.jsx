@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // Note: useNavigate is not used in this component, but can be added back if needed for specific links.
 // import { useNavigate } from "react-router-dom";
 
@@ -54,11 +55,11 @@ const Header = () => {
 
   // Navigation links data
   const navLinks = [
-    { title: "Home", href: "#home" },
-    { title: "About Us", href: "#about" },
-    { title: "Create Invoice", href: "#invoice" },
-    { title: "Blogs", href: "#blogs" },
-    { title: "Free Tools", href: "#tools" },
+    { title: "Home", href: "/" },
+    { title: "About Us", href: "/about" },
+    { title: "Create Invoice", href: "/invoice" },
+    { title: "Blogs", href: "/blogs" },
+    { title: "Free Tools", href: "/tools" },
   ];
 
   return (
@@ -67,24 +68,24 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a
-              href="/"
+            <Link
+              to={"/"}
               className="text-2xl font-bold tracking-tight text-white"
             >
               Billable.Pro
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex md:items-center md:space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.title}
-                href={link.href}
+                to={link.href}
                 className="font-medium text-gray-300 hover:text-white transition duration-150 ease-in-out"
               >
                 {link.title}
-              </a>
+              </Link>
             ))}
           </nav>
 
